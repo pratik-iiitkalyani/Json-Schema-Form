@@ -1,0 +1,22 @@
+{
+    "schema": {
+      "users": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "title": "user",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "name",
+              "required": true
+            },
+            "email": {
+              "type": "string",
+              "title": "email"
+            }
+          }
+        }
+      }
+    }
+}

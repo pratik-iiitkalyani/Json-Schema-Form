@@ -1,0 +1,14 @@
+{
+    "schema": {
+      "username": {
+        "title": "username",
+        "type": "string",
+        "required": true
+      },
+      "password": {
+        "title": "password",
+        "type": "string",
+        "required": true
+      }
+    }
+  }

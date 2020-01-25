@@ -1,7 +1,7 @@
 // * { border: 1px solid red !important; }
 @import '~@angular/material/theming';
 @include mat-core();
-$demo-app-primary: mat-palette($mat-blue);
+$demo-app-primary: mat-palette($mat-red);
 $demo-app-accent:  mat-palette($mat-amber, A200, A100, A400);
 $demo-app-warn:    mat-palette($mat-red);
 $demo-app-theme:   mat-light-theme($demo-app-primary, $demo-app-accent, $demo-app-warn);
@@ -9,6 +9,7 @@ $demo-app-theme:   mat-light-theme($demo-app-primary, $demo-app-accent, $demo-ap
 
 $font-family: 'Roboto', 'Noto', 'Helvetica Neue', sans-serif;
 $row-height: 56px;
+$border-color: solid #f3f3f3; /* Light grey */
 
 mat-toolbar {
   &.mat-medium {
@@ -16,6 +17,27 @@ mat-toolbar {
     mat-toolbar-row { height: $row-height; }
   }
 }
+
+.loader {
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 16px $border-color;
+  border-top: 16px solid crimson; /* Red */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -46,14 +68,6 @@ body {
 
 .ace_active-line { background: none !important; }
 
-[ace-editor], .data-good, .data-bad {
-  border-radius: 3px;
-  padding: 6px;
-  border: 1px solid #ccc !important;
-}
-
-[ace-editor] { background-color: rgb(253, 253, 253) !important; }
-
 .avoidwrap { display:inline-block; }
 
 .data-good { background-color: #dfd; }
@@ -66,6 +80,6 @@ body {
 
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel { max-width: 560px; }
 
-.debug { border: 1px solid red !important; }
+.debug { border: 1px solid crimson !important; }
 
 .mat-input-container.mat-form-field { width: 100%; }
